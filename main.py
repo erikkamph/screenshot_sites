@@ -23,7 +23,7 @@ class Capture:
             print("Not a valid browser")
             parser.print_usage()
             exit(0)
-        options.headless = True
+        options.headless = args.headless
         return options, profile
 
     def __driver__(self):
@@ -99,6 +99,9 @@ if __name__ == "__main__":
     parser.add_argument("-sD", "--store", dest="folder", help="A path to where you want to store the resulting file(s) "
                                                               "can be relative does not need to be absolute",
                         metavar="folder")
+    parser.add_argument("-hl", "--headless", dest="headless", help="If you do not want to see chrome or firefox, "
+                                                                   "headless makes it run in the background",
+                        action="store_true")
     parser.add_argument("--version", action="version", version='%(prog)s 1.0')
     args = parser.parse_args()
     v = args.verbose
