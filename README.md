@@ -46,3 +46,4 @@ flag and no progress bar have been added when supplying a large file to show whe
 See [TODO](TODO.md) for a list over stuff that needs to be added, if you have ideas please create a new [issue](https://github.com/erikkamph/screenshot_sites/issues).
 ![Image of script when supplying -h](help.png)
 ![Example image after running the script](test.png)
+![Example run with verbose flag](verbose_test.png)

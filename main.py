@@ -110,6 +110,9 @@ if __name__ == "__main__":
     start_pos = args.start_at
     b = args.browser
 
+    if v:
+        print(args)
+
     folder = ""
     if args.folder is None:
         folder = "~"
@@ -125,5 +128,8 @@ if __name__ == "__main__":
         print("One of the arguments -iL or -i are required.")
         parser.print_usage()
         exit(0)
+
+    if v:
+        print("Save folder: %s\nBrowser: %s\nFile: %s\nURL: %s\nStart Position: %s" % (folder, b, iL, url, start_pos))
 
     main(args.browser)
