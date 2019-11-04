@@ -36,11 +36,15 @@ Short | Long | Parameter Value | Description
 None | --version | None | Display the version of the script and exit.
 -h | --help | None | Display the program help and exit.
 
-### Examples to start the script
+### Viewing manual
+    man ./Capturer
+    man --local-file Capturer
+
+## Examples to start the script
     python3 main.py -b firefox -i http://localhost/help.php -sD ./
     python3 main.py -b firefox -iL input.txt --store path/to/folder --headless
 
-## Examples
+### Examples
 Unfortunately I can not take any picture of the script while it is running yet since I have not yet implemented verbose 
 flag and no progress bar have been added when supplying a large file to show where in the file it is. 
 See [TODO](TODO.md) for a list over stuff that needs to be added, if you have ideas please create a new [issue](https://github.com/erikkamph/screenshot_sites/issues).
