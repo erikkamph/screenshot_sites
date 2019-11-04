@@ -26,6 +26,8 @@ def progress(curr, top):
 def number_of_lines(file):
     with open(file, "r") as f:
         lines = f.readlines()
+        if v:
+            print(len(lines))
         return len(lines)
 
 
@@ -77,7 +79,10 @@ class Capture:
                 print(file)
             lines = file.readlines()
             nrlines = number_of_lines(in_list)
-            for l in lines:
+            x = start_pos + 1
+            for l in lines[start_pos:]:
+                progress(x, nrlines)
+                x += 1
                 self.__save__(l)
 
     def __save__(self, addr):
@@ -139,7 +144,7 @@ if __name__ == "__main__":
     v = args.verbose
     iL = args.input_list
     url = args.input
-    start_pos = args.start_at
+    start_pos = int(args.start_at)
     b = args.browser
 
     if v:

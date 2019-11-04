@@ -9,3 +9,4 @@ A list over stuff that needs to be fixed, added or improved.
 
 ## Fix
 - [ ] If page is not found
+- [ ] Start at start_pos
