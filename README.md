@@ -29,7 +29,7 @@ Short | Long | Parameter Value | Description
 -v | --verbose | None | To get more output from the program
 -s | --start | number | Takes a number and uses it to start from that position in the list
 -iL | --input-list | file | A file with lines to read, where each line is a url to a website
--i | --input | url | A single url to take a picture ofpython3 main.py -b firefox -i http://localhost/help.php -sD ./
+-i | --input | url | A single url to take a picture of
 -b | --browser | Chrome or Firefox | A webbrowser to use, the current available browsers are in the column left of this one.
 -sD | --store | folder | Where should the script store the images taken of the websites?
 -hl | --headless | None | To make the browser run in background.
