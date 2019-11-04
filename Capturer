@@ -5,7 +5,7 @@ Screenshot \- manual page for Screenshot 1.0
 .SH DESCRIPTION
 usage: Screenshot [\-h] [\-v] [\-s number] [\-iL file] [\-i url] [\-b browser]
 .IP
-[\-sD folder] [\-\-version]
+[\-sD folder] [\-hl] [\-\-version]
 .PP
 A script to take screenshots of websites with either firefox or chrome
 .SS "optional arguments:"
@@ -17,7 +17,8 @@ show this help message and exit
 Print more output when running the program
 .TP
 \fB\-s\fR number, \fB\-\-start\fR number
-Start on the nth line in the file
+Start on the nth line in the file (default: 0) Worth
+noting is that you need to count n \- 1 when using this
 .TP
 \fB\-iL\fR file, \fB\-\-input\-list\fR file
 What list should the program work its way through?
@@ -33,6 +34,10 @@ Firefox?
 \fB\-sD\fR folder, \fB\-\-store\fR folder
 A path to where you want to store the resulting
 file(s) can be relative does not need to be absolute
+.TP
+\fB\-hl\fR, \fB\-\-headless\fR
+If you do not want to see chrome or firefox, headless
+makes it run in the background
 .TP
 \fB\-\-version\fR
 show program's version number and exit

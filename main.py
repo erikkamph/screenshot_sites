@@ -125,7 +125,10 @@ if __name__ == "__main__":
                                                  "chrome", prog="Screenshot")
     parser.add_argument("-v", "--verbose", dest="verbose", help="Print more output when running the program",
                         action="store_true")
-    parser.add_argument("-s", "--start", dest="start_at", help="Start on the nth line in the file", default="0",
+    parser.add_argument("-s", "--start", dest="start_at", help="Start on the nth line in the file (default: 0)"
+                                                               " Worth noting is that you need to count n - 1 when"
+                                                               " using this",
+                        default="0",
                         metavar="number")
     parser.add_argument("-iL", "--input-list", dest="input_list", help="What list should the program work its way "
                                                                        "through?", metavar="file")
