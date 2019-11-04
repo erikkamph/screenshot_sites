@@ -3,6 +3,32 @@ from selenium import webdriver
 import os
 
 
+def progress(curr, top):
+    percentage = (curr/top) * 100
+    start_string_len = len(" " + str(curr) + "/" + str(top) + " [")
+    end_string_len = len("] 100% ")
+    total = start_string_len + end_string_len
+    width = int(columns) - total
+    parts = width / top
+    string_one_parts = parts * curr
+    string_two_parts = parts * (top - curr)
+    string_one = "#" * string_one_parts
+    string_two = "." * string_two_parts
+
+    print("\033[s", end="")                     # Save pointer location
+    print("\033[" + rows + ";1H", end="")       # Go to new pointer location
+    print("\033[2K", end="")                    # Clear text in row
+    print(" " + str(curr) + "/" + str(top) + " [" + string_one + string_two + "] " + str(int(percentage)) + "% ",
+          end="")                               # Print special text at row
+    print("\033[u", end="")                     # Restore the pointer to the original position
+
+
+def number_of_lines(file):
+    with open(file, "r") as f:
+        lines = f.readlines()
+        return len(lines)
+
+
 class Capture:
     def __init__(self, browser):
         self.browser = browser
@@ -24,6 +50,8 @@ class Capture:
             parser.print_usage()
             exit(0)
         options.headless = args.headless
+        if v:
+            print(options)
         return options, profile
 
     def __driver__(self):
@@ -34,17 +62,21 @@ class Capture:
             driver = webdriver.Chrome(options=self.options)
         driver.implicitly_wait(2)
         driver.maximize_window()
+        if v:
+            print(driver)
         return driver
 
     def __test_driver__(self):
-        if self.driver is None:
-            return False
-        else:
-            return True
+        if v:
+            print(self.driver is None)
+        return self.driver is not None
 
     def __loop__(self, in_list):
         with open(in_list, "r") as file:
+            if v:
+                print(file)
             lines = file.readlines()
+            nrlines = number_of_lines(in_list)
             for l in lines:
                 self.__save__(l)
 
@@ -128,8 +160,5 @@ if __name__ == "__main__":
         print("One of the arguments -iL or -i are required.")
         parser.print_usage()
         exit(0)
-
-    if v:
-        print("Save folder: %s\nBrowser: %s\nFile: %s\nURL: %s\nStart Position: %s" % (folder, b, iL, url, start_pos))
 
     main(args.browser)
