@@ -1,4 +1,5 @@
 # Screenshot Script
+
 ## Checklist before continuing
 - [x] Do you wish to have images of sites to remember what you did?
 - [x] Do you have a list of sites or just a single item?
@@ -6,11 +7,14 @@
 - [x] Or maybe the opposite?
 <br>
 If none of the items above applies then turn around now.
+
 ## Description
 The script was built for users that want to remember websites they have visited for a certain project.
+
 #### Assumption
 You have coded something a program or a script but don't really remember from where you have gotten parts of the code, 
 and want to revisit those pages but you may have cleared the history or changed to another computer.
+
 #### Solution
 The idea behind this script is that it should be easy to take a picture of a website and put it in the same directory 
 as the project. When using the script it will automatically turn the url to be the name of the file when it takes an 
@@ -18,6 +22,7 @@ image of the website.
 The script can run in the background by supplying the ```--headless``` flag when calling the script. 
 It can also be run in multiple instances and uses only one tab per call on script and therefore as 
 little memory as possible.
+
 ### Flags
 Short | Long | Parameter Value | Description
 ------|------|-----------------|-------------
