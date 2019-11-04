@@ -5,7 +5,7 @@
 - [x] Do you have a list of sites or just a single item?
 - [x] Do not have firefox but chrome?
 - [x] Or maybe the opposite?
-<br>
+
 If none of the items above applies then turn around now.
 
 ## Description
