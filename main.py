@@ -1,5 +1,7 @@
 import argparse
+
 from selenium import webdriver
+from selenium.common import exceptions
 import os
 
 
@@ -86,13 +88,16 @@ class Capture:
                 self.__save__(l)
 
     def __save__(self, addr):
-        self.driver.get(addr)
-        while self.driver.execute_script("return document.readyState") != "complete":
-            continue
-        filename = get_filename(addr)
-        path = get_path(folder)
-        full_path = path + "/" + filename
-        self.driver.save_screenshot(full_path)
+        try:
+            self.driver.get(addr)
+            while self.driver.execute_script("return document.readyState") != "complete":
+                continue
+            filename = get_filename(addr)
+            path = get_path(folder)
+            full_path = path + "/" + filename
+            self.driver.save_screenshot(full_path)
+        except exceptions.WebDriverException as e:
+            print("Could not find website at " + addr)
 
 
 def get_filename(address):
