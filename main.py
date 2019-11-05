@@ -97,6 +97,8 @@ class Capture:
             full_path = path + "/" + filename
             self.driver.save_screenshot(full_path)
         except exceptions.WebDriverException as e:
+            if v:
+                print(e)
             print("Could not find website at " + addr)
 
 
