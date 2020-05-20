@@ -30,11 +30,14 @@ Short | Long | Parameter Value | Description
 -s | --start | number | Takes a number and uses it to start from that position in the list
 -iL | --input-list | file | A file with lines to read, where each line is a url to a website
 -i | --input | url | A single url to take a picture of
--b | --browser | Chrome or Firefox | A webbrowser to use, the current available browsers are in the column left of this one.
+-b | --browser | Chrome, Firefox or Safari | A webbrowser to use, the current available browsers are in the column left of this one.
 -sD | --store | folder | Where should the script store the images taken of the websites?
 -hl | --headless | None | To make the browser run in background.
 None | --version | None | Display the version of the script and exit.
 -h | --help | None | Display the program help and exit.
+
+Watch out! When using Safari you have to enable the developer menu by Preferences -> Advanced -> Show develop menu in menu bar. 
+After having activated the menu, open it and activate "Allow Remote Automation", otherwise this script does not work.
 
 ### Viewing manual
     man ./Capturer

@@ -49,11 +49,14 @@ class Capture:
         elif self.browser in ("Chrome", "chrome"):
             options = webdriver.ChromeOptions()
             options.add_argument("--incognito")
+        elif self.browser in ("Safari", "safari"):
+            options = None
         else:
             print("Not a valid browser")
             parser.print_usage()
             exit(0)
-        options.headless = args.headless
+        if options is not None:
+            options.headless = args.headless
         if v:
             print(options)
         return options, profile
@@ -64,6 +67,8 @@ class Capture:
             driver = webdriver.Firefox(options=self.options, firefox_profile=self.profile)
         elif self.browser in ("Chrome", "chrome"):
             driver = webdriver.Chrome(options=self.options)
+        elif self.browser in ("Safari", "safari"):
+            driver = webdriver.Safari(quiet=True, keep_alive=True)
         driver.implicitly_wait(2)
         driver.maximize_window()
         if v:
@@ -167,7 +172,7 @@ if __name__ == "__main__":
         folder = args.folder
 
     if b is None:
-        print("A browser has to be of either Firefox or Chrome")
+        print("A browser has to be of either Firefox, Chrome or Safari")
         parser.print_usage()
         exit(0)
 
