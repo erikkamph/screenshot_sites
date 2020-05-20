@@ -1,12 +1,14 @@
 # TODO
 A list over stuff that needs to be fixed, added or improved.
 ## Implement
-- [x] Progress Bar
-- [ ] Verbose output
+- [ ] If page is not found, try checking for redirection or output that page address to a file
 
 ## Improve
 - [ ] Waiting for pages to be done loading
 
 ## Fix
-- [ ] If page is not found
-- [ ] Start at start_pos
+
+## Done
+- [x] Progress Bar
+- [x] Verbose output option
+- [x] Start at start_pos
